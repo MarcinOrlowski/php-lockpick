@@ -15,6 +15,7 @@ namespace MarcinOrlowski\Lockpick;
 
 use MarcinOrlowski\TypeAsserts\Type;
 use MarcinOrlowski\TypeAsserts\Validator;
+use MarcinOrlowski\TypeAsserts\Exception as Ex;
 
 class Lockpick
 {
@@ -30,9 +31,9 @@ class Lockpick
      * @throws \ReflectionException
      * @throws \RuntimeException
      */
-    public static function call($clsOrObj, string $method_name, array $args = []): mixed
+    public static function call(string|object $clsOrObj, string $method_name, array $args = []): mixed
     {
-        Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT], 'clsOrObj');
+        Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT]);
 
         /**
          * At this point $objectOrClass is either object or string but some static analyzers
