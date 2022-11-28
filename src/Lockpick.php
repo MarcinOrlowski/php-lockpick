@@ -15,23 +15,22 @@ namespace MarcinOrlowski\Lockpick;
 
 use MarcinOrlowski\TypeAsserts\Type;
 use MarcinOrlowski\TypeAsserts\Validator;
-use MarcinOrlowski\TypeAsserts\Exception as Ex;
 
 class Lockpick
 {
     /**
      * Calls protected method of $object, passing optional array of arguments.
      *
-     * @param object|string $clsOrObj    Object to call $methodName on or name of the class.
-     * @param string        $method_name Name of method to call.
-     * @param array         $args        Optional array of arguments (empty array for no args).
+     * @param object|string $clsOrObj   Object to call $methodName on or name of the class.
+     * @param string        $methodName Name of method to call.
+     * @param array         $args       Optional array of arguments (empty array for no args).
      *
      * @return mixed
      *
      * @throws \ReflectionException
      * @throws \RuntimeException
      */
-    public static function call(string|object $clsOrObj, string $method_name, array $args = []): mixed
+    public static function call(string|object $clsOrObj, string $methodName, array $args = []): mixed
     {
         Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT]);
 
@@ -43,7 +42,7 @@ class Lockpick
          * @var class-string|object $clsOrObj
          */
         $reflection = new \ReflectionClass($clsOrObj);
-        $method = $reflection->getMethod($method_name);
+        $method = $reflection->getMethod($methodName);
         $method->setAccessible(true);
 
         return $method->invokeArgs(\is_object($clsOrObj) ? $clsOrObj : null, $args);
