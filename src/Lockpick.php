@@ -61,7 +61,7 @@ class Lockpick
      *
      * @throws \ReflectionException
      */
-    public static function getProperty($clsOrObj, string $name): mixed
+    public static function getProperty(object|string $clsOrObj, string $name): mixed
     {
         Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT], 'clsOrObj');
 
@@ -91,7 +91,7 @@ class Lockpick
      *
      * @throws \ReflectionException
      */
-    public static function getConstant($clsOrObj, string $name): mixed
+    public static function getConstant(object|string $clsOrObj, string $name): mixed
     {
         Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT], 'clsOrObj');
 
