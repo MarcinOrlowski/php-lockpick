@@ -16,9 +16,11 @@ namespace MarcinOrlowski\LockpickTest;
 class Stronghold
 {
     protected const PROTECTED_CONSTANT = 'I am protected constant';
+    // @phpstan-ignore-next-line
     private const   PRIVATE_CONSTANT   = 'I am private constant';
 
     protected string $protectedProperty = 'I am protected property';
+    // @phpstan-ignore-next-line
     private string   $privateProperty   = 'I am private property';
 
     protected static function protectedStaticMethod(): string
@@ -26,6 +28,7 @@ class Stronghold
         return 'I am protected static method';
     }
 
+    // @phpstan-ignore-next-line
     private static function privateStaticMethod(): string
     {
         return 'I am private static method';
@@ -36,6 +39,7 @@ class Stronghold
         return 'I am protected method';
     }
 
+    // @phpstan-ignore-next-line
     private function privateMethod(): string
     {
         return 'I am private method';
