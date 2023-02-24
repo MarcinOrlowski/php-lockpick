@@ -22,12 +22,12 @@ code class and all methods should be simply available via static reference `Lock
 
 ## Available methods ##
 
-| Method                                                                 | Description                         |
-|------------------------------------------------------------------------|-------------------------------------|
-| call(object OR string $clsOrObj, string $method_name, array $args = [] | Calls object/class protected method |
-| getProperty(string OR object $clsOrObj, string $name)                  | Returns value of protected property |
-| getProperty(string OR object $clsOrObj, string $name, mixed $value)    | Sets  value of protected property   |
-| getConstant(string OR object $clsOrObj, string $name)                  | Returns value of protected constant |
+| Method                                                             | Description                         |
+|--------------------------------------------------------------------|-------------------------------------|
+| call(object|string $clsOrObj, string $methodName, array $args = [] | Calls object/class protected method |
+| getProperty(string|object $clsOrObj, string $name)                 | Returns value of protected property |
+| getProperty(string|object $clsOrObj, string $name, mixed $value)   | Sets  value of protected property   |
+| getConstant(string|object $clsOrObj, string $name)                 | Returns value of protected constant |
 
 ----
 
