@@ -10,7 +10,7 @@ methods, aimed mostly for tests.
 ## Installation ##
 
 ```bash
-composer require marcin-orlowski/lockpick
+composer require marcin-orlowski/php-lockpick
 ```
 
 NOTE: the package was formerly named `php-lockpick`, but aside the name nothing else changed.
