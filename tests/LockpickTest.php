@@ -103,4 +103,25 @@ class LockpickTest extends TestCase
         Assert::assertEquals($expected, $val);
     }
 
+    public function testGettingOfProtectedProperty(): void
+    {
+        $obj = new Stronghold();
+
+        $expected = 'protectedPropertysdfsdfsfsf';
+        Lockpick::setProperty($obj, 'protectedProperty', $expected);
+        $val = Lockpick::getProperty($obj, 'protectedProperty');
+
+        Assert::assertEquals($expected, $val);
+    }
+
+    public function testSettingOfProtectedProperty(): void
+    {
+        $obj = new Stronghold();
+
+        $expected = 'protectedPropertysdfsdfsfsf';
+        Lockpick::setProperty($obj, 'protectedProperty', $expected);
+        $val = Lockpick::getProperty($obj, 'protectedProperty');
+
+        Assert::assertEquals($expected, $val);
+    }
 }

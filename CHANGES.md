@@ -1,6 +1,9 @@
-# PhpLockpick #
+# Lockpick #
 
 ## CHANGELOG ##
+
+* 1.1.0 (2023-02-24)
+  * Added `setProperty()` method to set value of private/protected properties.
 
 * 1.0.1 (2022-11-28)
   * Corrected methods' signatures.

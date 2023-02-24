@@ -1,33 +1,37 @@
-# PhpLockpick #
+# Lockpick #
 
 [![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/php-lockpick/v/stable)](https://packagist.org/packages/marcin-orlowski/php-lockpick)
 [![License](https://poser.pugx.org/marcin-orlowski/php-lockpick/license)](https://packagist.org/packages/marcin-orlowski/php-lockpick)
 
-Collection of helper methods allowing easy access to protected/private properties and constants
-of objects or classes.
+Collection of PHP helper methods allowing easy access to protected or private properties
+and constants of objects or classes as well as allowing to call formerly protected/private
+methods, aimed mostly for tests.
 
 ## Installation ##
 
 ```bash
-composer require marcin-orlowski/php-lockpick
+composer require marcin-orlowski/lockpick
 ```
+
+NOTE: the package was formerly named `php-lockpick`, but aside the name nothing else changed.
 
 ## Usage ##
 
-As all methods come as set of static methods so you just need to add related `use` to your
+As all methods come as set of **static** methods, so you just need to add related `use` to your
 code class and all methods should be simply available via static reference `Lockpick::...`.
 
 ## Available methods ##
 
-| Method                                                                   | Description                         |
-|--------------------------------------------------------------------------|-------------------------------------|
-| call(object OR string $cls_or_obj, string $method_name, array $args = [] | Calls object/class protected method |
-| getProperty(string OR object $cls_or_obj, string $name)                  | Returns value of protected property |
-| getConstant(string OR object $cls_or_obj, string $name)                  | Returns value of protected constant |
+| Method                                                                 | Description                         |
+|------------------------------------------------------------------------|-------------------------------------|
+| call(object OR string $clsOrObj, string $method_name, array $args = [] | Calls object/class protected method |
+| getProperty(string OR object $clsOrObj, string $name)                  | Returns value of protected property |
+| getProperty(string OR object $clsOrObj, string $name, mixed $value)    | Sets  value of protected property   |
+| getConstant(string OR object $clsOrObj, string $name)                  | Returns value of protected constant |
 
 ----
 
 ## License ##
 
-* Written and copyrighted &copy;2014-2022 by Marcin Orlowski
+* Written and copyrighted &copy;2014-2023 by Marcin Orlowski
 * Open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
