@@ -78,6 +78,22 @@ class Lockpick
         return $property->getValue(\is_object($clsOrObj) ? $clsOrObj : null);
     }
 
+    public static function setProperty(object|string $clsOrObj, string $name, mixed $value): void
+    {
+        Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT], 'clsOrObj');
+
+        /**
+         * At this point $objectOrClass is either object or string but some static analyzers
+         * got problems figuring that out, so this (partially correct) var declaration is
+         * to make them believe.
+         *
+         * @var class-string|object $clsOrObj
+         */
+        $reflection = new \ReflectionClass($clsOrObj);
+        $property = $reflection->getProperty($name);
+        $property->setValue($clsOrObj, $value);
+    }
+
     /* **************************************************************************************************** */
 
     /**
