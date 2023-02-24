@@ -3,10 +3,8 @@
 # PHP Lockpick
 # Helps accessing protected/private members/consts of foreign objects
 #
-# @package   MarcinOrlowski\PhpLockpick
-#
 # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
-# @copyright 2022 Marcin Orlowski
+# @copyright 2022-2023 Marcin Orlowski
 # @license   http://www.opensource.org/licenses/mit-license.php MIT
 # @link      https://github.com/MarcinOrlowski/php-lockpick
 #
