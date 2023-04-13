@@ -26,7 +26,7 @@ composer require marcin-orlowski/lockpick
 ```
 
 **NOTE:** Formerly package was named `marcin-orlowski/php-lockpick`. If you use old package name, the upgrade should
-be automatically handled by the `composer upgraed` anyway.
+be automatically handled by the `composer upgrade` anyway.
 
 ## Usage ##
 
