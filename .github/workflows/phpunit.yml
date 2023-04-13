@@ -47,15 +47,16 @@ jobs:
       # As in next step we use local phpunit binary, so ensure it is executable.
       - name: Set executable bit on all files in vendor/bin folder
         run: |
-          chmod +x vendor/bin/*
+          /usr/bin/env php vendor/bin/phpunit -c phpunit.xml -c phpunit.xml.dist
 
-      # https://github.com/marketplace/actions/phpunit-php-actions
-      - name: "Running PHPUnit..."
-        uses: php-actions/phpunit@v3
-        with:
-          bootstrap: "vendor/autoload.php"
-          configuration: "phpunit.xml.dist"
-          # we want our PHPUnit version to be used, not one built into the action
-          vendored_phpunit_path: "vendor/bin/phpunit"
-          memory_limit: "16M"
-          php_version: "${{ matrix.php }}"
+
+#      # https://github.com/marketplace/actions/phpunit-php-actions
+#      - name: "Running PHPUnit..."
+#        uses: php-actions/phpunit@v3
+#        with:
+#          bootstrap: "vendor/autoload.php"
+#          configuration: "phpunit.xml.dist"
+#          # we want our PHPUnit version to be used, not one built into the action
+#          vendored_phpunit_path: "vendor/bin/phpunit"
+#          memory_limit: "16M"
+#          php_version: "${{ matrix.php }}"
