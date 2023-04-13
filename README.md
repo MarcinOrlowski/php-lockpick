@@ -1,5 +1,17 @@
 # Lockpick #
 
+```ascii
+ ▄█        ▄██████▄   ▄████████    ▄█   ▄█▄    ▄███████▄  ▄█   ▄████████    ▄█   ▄█▄
+███       ███    ███ ███    ███   ███ ▄███▀   ███    ███ ███  ███    ███   ███ ▄███▀
+███       ███    ███ ███    █▀    ███▐██▀     ███    ███ ███▌ ███    █▀    ███▐██▀  
+███       ███    ███ ███         ▄█████▀      ███    ███ ███▌ ███         ▄█████▀  
+███       ███    ███ ███        ▀▀█████▄    ▀█████████▀  ███▌ ███        ▀▀█████▄  
+███       ███    ███ ███    █▄    ███▐██▄     ███        ███  ███    █▄    ███▐██▄  
+███▌    ▄ ███    ███ ███    ███   ███ ▀███▄   ███        ███  ███    ███   ███ ▀███▄
+█████▄▄██  ▀██████▀  ████████▀    ███   ▀█▀  ▄████▀      █▀   ████████▀    ███   ▀█▀
+▀                                 ▀                                        ▀  
+```
+
 [![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/php-lockpick/v/stable)](https://packagist.org/packages/marcin-orlowski/php-lockpick)
 [![License](https://poser.pugx.org/marcin-orlowski/php-lockpick/license)](https://packagist.org/packages/marcin-orlowski/php-lockpick)
 
@@ -13,8 +25,6 @@ methods, aimed mostly for tests.
 composer require marcin-orlowski/php-lockpick
 ```
 
-NOTE: the package was formerly named `php-lockpick`, but aside the name nothing else changed.
-
 ## Usage ##
 
 As all methods come as set of **static** methods, so you just need to add related `use` to your
@@ -22,12 +32,12 @@ code class and all methods should be simply available via static reference `Lock
 
 ## Available methods ##
 
-| Method                                                                | Description                         |
-|-----------------------------------------------------------------------|-------------------------------------|
-| call(object OR string $clsOrObj, string $methodName, array $args = [] | Calls object/class protected method |
-| getProperty(string OR object $clsOrObj, string $name)                 | Returns value of protected property |
-| getProperty(string OR object $clsOrObj, string $name, mixed $value)   | Sets  value of protected property   |
-| getConstant(string OR object $clsOrObj, string $name)                 | Returns value of protected constant |
+| Method                                                               | Description                                            |
+|----------------------------------------------------------------------|--------------------------------------------------------|
+| call(object\|string $clsOrObj, string $methodName, array $args = []) | Calls object/class protected method |
+| getProperty(string OR object $clsOrObj, string $name)                | Returns value of protected property                    |
+| setProperty(string OR object $clsOrObj, string $name, mixed $value)  | Sets  value of protected property                      |
+| getConstant(string OR object $clsOrObj, string $name)                | Returns value of protected constant                    |
 
 ----
 
@@ -35,3 +45,4 @@ code class and all methods should be simply available via static reference `Lock
 
 * Written and copyrighted &copy;2014-2023 by Marcin Orlowski
 * Open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+* ASCII Art created using [https://textkool.com](https://textkool.com)
