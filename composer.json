@@ -18,7 +18,10 @@
         }
     ],
     "replace": {
-        "marcin-orlowski/php-lockpick": "self.version"
+        "marcin-orlowski/php-lockpick": "*"
+    },
+    "conflicts": {
+	"marcin-orlowski/php-lockpick": "*"
     },
     "support": {
         "source": "https://github.com/MarcinOrlowski/php-lockpick/",
