@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Helps accessing protected/private members/consts of foreign objects
  *
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2014-2022 Marcin Orlowski
+ * @copyright 2014-2023 Marcin Orlowski
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @link      https://github.com/MarcinOrlowski/php-lockpick
  */
@@ -87,7 +87,7 @@ class Lockpick
          * got problems figuring that out, so this (partially correct) var declaration is
          * to make them believe.
          *
-         * @var class-string|object $clsOrObj
+         * @var string|object $clsOrObj
          */
         $reflection = new \ReflectionClass($clsOrObj);
         $property = $reflection->getProperty($name);
@@ -115,7 +115,7 @@ class Lockpick
          * got problems figuring that out, so this (partially correct) var declaration is
          * to make them believe.
          *
-         * @var class-string|object $clsOrObj
+         * @var string|object $clsOrObj
          */
         return (new \ReflectionClass($clsOrObj))->getConstant($name);
     }
