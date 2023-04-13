@@ -21,11 +21,9 @@ class Lockpick
     /**
      * Calls protected method of $object, passing optional array of arguments.
      *
-     * @param object|string $clsOrObj   Object to call $methodName on or name of the class.
-     * @param string        $methodName Name of method to call.
-     * @param array         $args       Optional array of arguments (empty array for no args).
-     *
-     * @return mixed
+     * @param object|string $clsOrObj Object to call $methodName on or name of the class.
+     * @param string $methodName Name of method to call.
+     * @param array $args Optional array of arguments (empty array for no args).
      *
      * @throws \ReflectionException
      * @throws \RuntimeException
@@ -54,9 +52,7 @@ class Lockpick
      * Returns value of otherwise non-public property of the class
      *
      * @param string|object $clsOrObj Class name to get property from, or instance of that class
-     * @param string        $name     Property name to grab (i.e. `maxLength`)
-     *
-     * @return mixed
+     * @param string $name Property name to grab (i.e. `maxLength`)
      *
      * @throws \ReflectionException
      */
@@ -68,8 +64,6 @@ class Lockpick
          * At this point $objectOrClass is either object or string but some static analyzers
          * got problems figuring that out, so this (partially correct) var declaration is
          * to make them believe.
-         *
-         * @var class-string|object $clsOrObj
          */
         $reflection = new \ReflectionClass($clsOrObj);
         $property = $reflection->getProperty($name);
@@ -86,8 +80,6 @@ class Lockpick
          * At this point $objectOrClass is either object or string but some static analyzers
          * got problems figuring that out, so this (partially correct) var declaration is
          * to make them believe.
-         *
-         * @var string|object $clsOrObj
          */
         $reflection = new \ReflectionClass($clsOrObj);
         $property = $reflection->getProperty($name);
@@ -100,7 +92,7 @@ class Lockpick
      * Returns value of otherwise non-public member of the class
      *
      * @param string|object $clsOrObj Class name to get member from, or instance of that class
-     * @param string        $name     Name of constant to grab (i.e. `FOO`)
+     * @param string $name Name of constant to grab (i.e. `FOO`)
      *
      * @return mixed
      *
@@ -114,8 +106,6 @@ class Lockpick
          * At this point $clsOrObj is either object or string but some static analyzers
          * got problems figuring that out, so this (partially correct) var declaration is
          * to make them believe.
-         *
-         * @var string|object $clsOrObj
          */
         return (new \ReflectionClass($clsOrObj))->getConstant($name);
     }
