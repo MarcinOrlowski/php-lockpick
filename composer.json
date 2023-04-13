@@ -2,7 +2,7 @@
     "name": "marcin-orlowski/lockpick",
     "description": "Helps accessing protected/private members/consts of foreign objects.",
     "homepage": "https://github.com/MarcinOrlowski/php-lockpick",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "keywords": [
         "helper",
         "php8",
