@@ -36,8 +36,6 @@ class Lockpick
          * At this point $objectOrClass is either object or string but some static analyzers
          * got problems figuring that out, so this (partially correct) var declaration is
          * to make them believe.
-         *
-         * @var class-string|object $clsOrObj
          */
         $reflection = new \ReflectionClass($clsOrObj);
         $method = $reflection->getMethod($methodName);
@@ -65,6 +63,7 @@ class Lockpick
          * got problems figuring that out, so this (partially correct) var declaration is
          * to make them believe.
          */
+        /** @var mixed $clsOrObj */
         $reflection = new \ReflectionClass($clsOrObj);
         $property = $reflection->getProperty($name);
         $property->setAccessible(true);
@@ -81,8 +80,10 @@ class Lockpick
          * got problems figuring that out, so this (partially correct) var declaration is
          * to make them believe.
          */
+        /** @var mixed $clsOrObj */
         $reflection = new \ReflectionClass($clsOrObj);
         $property = $reflection->getProperty($name);
+        /** @var mixed $clsOrObj */
         $property->setValue($clsOrObj, $value);
     }
 
