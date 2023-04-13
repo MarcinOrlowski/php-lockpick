@@ -50,6 +50,8 @@ jobs:
         with:
           bootstrap: "vendor/autoload.php"
           configuration: "phpunit.xml.dist"
+          # we want our PHPUnit version to be used, not one built into the action
+          vendored_phpunit_path: "vendor/bin/phpunit"
           php_extensions: "xdebug"
           args: --coverage-clover coverage.xml
         env:

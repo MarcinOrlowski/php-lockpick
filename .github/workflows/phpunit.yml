@@ -50,5 +50,7 @@ jobs:
         with:
           bootstrap: "vendor/autoload.php"
           configuration: "phpunit.xml.dist"
+          # we want our PHPUnit version to be used, not one built into the action
+          vendored_phpunit_path: "vendor/bin/phpunit"
           memory_limit: "16M"
           php_version: "${{ matrix.php }}"
