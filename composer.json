@@ -1,5 +1,5 @@
 {
-    "name": "marcin-orlowski/php-lockpick",
+    "name": "marcin-orlowski/lockpick",
     "description": "Helps accessing protected/private members/consts of foreign objects.",
     "homepage": "https://github.com/MarcinOrlowski/php-lockpick",
     "version": "1.1.0",
@@ -17,6 +17,9 @@
             "homepage": "https://MarcinOrlowski.com/"
         }
     ],
+    "replace": {
+        "marcin-orlowski/php-lockpick": "self.version"
+    },
     "support": {
         "source": "https://github.com/MarcinOrlowski/php-lockpick/",
         "issues": "https://github.com/MarcinOrlowski/php-lockpick/issues"
