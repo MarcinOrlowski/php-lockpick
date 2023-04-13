@@ -22,5 +22,5 @@ parameters:
             message: '#Parameter \#1 \$objectOrClass of class ReflectionClass constructor expects class-string<.*>|T of object, object\|string given\.#'
             path: '%currentWorkingDirectory%/src/Lockpick.php'
         -
-            message: "Parameter #1 $objectOrValue of method ReflectionProperty::setValue() expects object|null, mixed given."
+            message: '#Parameter \#1 \$objectOrValue of method ReflectionProperty::setValue\(\) expects object\|null, mixed given#'
             path: '%currentWorkingDirectory%/src/Lockpick.php'
