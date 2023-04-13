@@ -5,7 +5,7 @@
 # @package   MarcinOrlowski\PhpunitExtraAsserts
 #
 # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
-# @copyright 2014-2022 Marcin Orlowski
+# @copyright 2014-2023 Marcin Orlowski
 # @license   http://www.opensource.org/licenses/mit-license.php MIT
 # @link      https://github.com/MarcinOrlowski/phpunit-extra-asserts
 #
@@ -17,5 +17,10 @@ parameters:
   paths:
     - src/
     - tests/
-#  ignoreErrors:
-#    - '#^Unsafe usage of new static\(\)\.$#'
+  ignoreErrors:
+        -
+            message: '#Parameter \#1 \$objectOrClass of class ReflectionClass constructor expects class-string<.*>|T of object, object\|string given\.#'
+            path: '%currentWorkingDirectory%/src/Lockpick.php'
+        -
+            message: '#Parameter \#1 \$objectOrValue of method ReflectionProperty::setValue\(\) expects object\|null, mixed given#'
+            path: '%currentWorkingDirectory%/src/Lockpick.php'

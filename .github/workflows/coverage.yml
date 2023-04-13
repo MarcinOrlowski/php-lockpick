@@ -24,11 +24,11 @@ on:
 jobs:
   coverage:
     strategy:
-      # do not stop the workflow if single run failed
+      # do not stop the workflow if a single run failed
       fail-fast: false
       matrix:
         # quotes are needed it is treated as a number and zero at decimal part is gone at runtime
-        php: ["8.1"]
+        php: ["8.0"]
 
     runs-on: ubuntu-latest
 
@@ -44,16 +44,26 @@ jobs:
           php_version: "${{ matrix.php }}"
           dev: yes
 
-      # https://github.com/marketplace/actions/phpunit-php-actions
       - name: "Running PHPUnit with Coverage..."
-        uses: php-actions/phpunit@v3
-        with:
-          bootstrap: "vendor/autoload.php"
-          configuration: "phpunit.xml.dist"
-          php_extensions: "xdebug"
-          args: --coverage-clover coverage.xml
-        env:
-          XDEBUG_MODE: coverage
+        run: |
+          /usr/bin/env php vendor/bin/phpunit -c phpunit.xml -c phpunit.xml.dist --coverage-clover coverage.xml
+
+
+#      # https://github.com/marketplace/actions/phpunit-php-actions
+#      # NOTE: this action uses **OWN** phpunit binary which can be 10, but we got config
+#      #       for v9 and phpunit10 complains/fails in such case and there seem to be no
+#      #       option as of now to override that.
+#      - name: "Running PHPUnit with Coverage..."
+#        uses: php-actions/phpunit@v3
+#        with:
+#          bootstrap: "vendor/autoload.php"
+#          configuration: "phpunit.xml.dist"
+#          # we want our PHPUnit version to be used, not one built into the action
+#          vendored_phpunit_path: "vendor/bin/phpunit"
+#          php_extensions: "xdebug"
+#          args: --coverage-clover coverage.xml
+#        env:
+#          XDEBUG_MODE: coverage
 
 #      # https://github.com/marketplace/actions/codecov
 #      - name: "Uploading coverage to CodeCov.io..."
