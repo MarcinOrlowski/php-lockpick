@@ -12,8 +12,8 @@
 
 # Lockpick #
 
-[![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/php-lockpick/v/stable)](https://packagist.org/packages/marcin-orlowski/lockpick)
-[![License](https://poser.pugx.org/marcin-orlowski/php-lockpick/license)](https://packagist.org/packages/marcin-orlowski/lockpick)
+[![Latest Stable Version](https://poser.pugx.org/marcin-orlowski/lockpick/v/stable)](https://packagist.org/packages/marcin-orlowski/lockpick)
+[![License](https://poser.pugx.org/marcin-orlowski/lockpick/license)](https://packagist.org/packages/marcin-orlowski/lockpick)
 
 Collection of PHP helper methods allowing easy access to protected or private properties
 and constants of objects or classes as well as allowing to call formerly protected/private
