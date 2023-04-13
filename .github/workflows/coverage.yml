@@ -47,7 +47,7 @@ jobs:
       # As in next step we use local phpunit binary, so ensure it is executable.
       - name: Set executable bit on all files in vendor/bin folder
         run: |
-          find vendor/bin/ -type f -exec chmod +x {} \;
+          chmod +x vendor/bin/*
 
       # https://github.com/marketplace/actions/phpunit-php-actions
       - name: "Running PHPUnit with Coverage..."
