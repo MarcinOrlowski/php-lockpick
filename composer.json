@@ -42,5 +42,8 @@
         "phpunit/phpunit": "^9.0",
         "phpunit/php-code-coverage": "^9.0",
         "phpstan/phpstan": "^1.8"
+    },
+    "scripts": {
+	"test": "vendor/bin/phpunit -c phpinit.xml -c phpunit.xml.dist"
     }
 }
