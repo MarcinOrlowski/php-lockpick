@@ -44,13 +44,14 @@ jobs:
           php_version: "${{ matrix.php }}"
           dev: yes
 
-      # As in next step we use local phpunit binary, so ensure it is executable.
-      - name: Set executable bit on all files in vendor/bin folder
+      - name: "Running PHPUnit..."
         run: |
           /usr/bin/env php vendor/bin/phpunit -c phpunit.xml -c phpunit.xml.dist
 
-
 #      # https://github.com/marketplace/actions/phpunit-php-actions
+#      # NOTE: this action uses **OWN** phpunit binary which can be 10, but we got config
+#      #       for v9 and phpunit10 complains/fails in such case and there seem to be no
+#      #       option as of now to override that.
 #      - name: "Running PHPUnit..."
 #        uses: php-actions/phpunit@v3
 #        with:
