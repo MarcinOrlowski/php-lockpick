@@ -12,6 +12,10 @@
 
 # CHANGELOG #
 
+* 1.2.1 (2023-04-14)
+  * Listed `marcin-orlowski/php-lockpick` package as conflicting one.
+  * Removed unused config files.
+
 * 1.2.0 (2023-04-13)
   * Package name changed to `marcin-orlowski/lockpick` (formerly `marcin-orlowski/php-lockpick`).
   * Updated documentation.
