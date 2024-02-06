@@ -12,7 +12,7 @@
 
 # CHANGELOG #
 
-* dev
+* 1.3.0 (2024-02-06)
   * Dropped PHP 8.0 support
   * Added `Lockpick::getMethodVisibility()` method
   * Added `Lockpick::getPropertiesVisibility()` method
