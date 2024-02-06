@@ -14,6 +14,9 @@
 
 * dev
   * Dropped PHP 8.0 support
+  * Added `Lockpick::getMethodVisibility()` method
+  * Added `Lockpick::getPropertiesVisibility()` method
+  * Added `Lockpick::getConstantVisibility()` method
 
 
 * 1.2.1 (2023-04-14)
