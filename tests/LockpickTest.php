@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Helps accessing protected/private members/consts of foreign objects
  *
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2022-2023 Marcin Orlowski
+ * @copyright 2022-2024 Marcin Orlowski
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @link      https://github.com/MarcinOrlowski/php-lockpick
  */
@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace MarcinOrlowski\LockpickTest;
 
 use MarcinOrlowski\Lockpick\Lockpick;
+use MarcinOrlowski\Lockpick\Visibility;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 
@@ -124,4 +125,95 @@ class LockpickTest extends TestCase
 
         Assert::assertEquals($expected, $val);
     }
+
+    /* ****************************************************************************************** */
+
+    public function tstPublicStaticMethodVisibility(): void
+    {
+        $visibility = Lockpick::getMethodVisibility(Stronghold::class, 'publicStaticMethod');
+        Assert::assertEquals(Visibility::PUBLIC, $visibility);
+    }
+
+    public function testProtectedStaticMethodVisibility(): void
+    {
+        $visibility = Lockpick::getMethodVisibility(Stronghold::class, 'protectedStaticMethod');
+        Assert::assertEquals(Visibility::PROTECTED, $visibility);
+    }
+
+    public function testPrivateStaticMethodVisibility(): void
+    {
+        $visibility = Lockpick::getMethodVisibility(Stronghold::class, 'privateStaticMethod');
+        Assert::assertEquals(Visibility::PRIVATE, $visibility);
+    }
+
+    /* ****************************************************************************************** */
+
+    public function testPublicMethodVisibility(): void
+    {
+        $visibility = Lockpick::getMethodVisibility(Stronghold::class, 'publicMethod');
+        Assert::assertEquals(Visibility::PUBLIC, $visibility);
+    }
+
+    public function testProtectedMethodVisibility(): void
+    {
+        $visibility = Lockpick::getMethodVisibility(Stronghold::class, 'protectedMethod');
+        Assert::assertEquals(Visibility::PROTECTED, $visibility);
+    }
+
+    public function testPrivateMethodVisibility(): void
+    {
+        $visibility = Lockpick::getMethodVisibility(Stronghold::class, 'privateMethod');
+        Assert::assertEquals(Visibility::PRIVATE, $visibility);
+    }
+
+    /* ****************************************************************************************** */
+
+    public function testPublicPropertyVisibility(): void
+    {
+        $visibility = Lockpick::getPropertyVisibility(Stronghold::class, 'publicProperty');
+        Assert::assertEquals(Visibility::PUBLIC, $visibility);
+    }
+
+    public function testProtectedPropertyVisibility(): void
+    {
+        $visibility = Lockpick::getPropertyVisibility(Stronghold::class, 'protectedProperty');
+        Assert::assertEquals(Visibility::PROTECTED, $visibility);
+    }
+
+    public function testPrivatePropertyVisibility(): void
+    {
+        $visibility = Lockpick::getPropertyVisibility(Stronghold::class, 'privateProperty');
+        Assert::assertEquals(Visibility::PRIVATE, $visibility);
+    }
+
+    /* ****************************************************************************************** */
+
+    public function testPublicConstantVisibility(): void
+    {
+        $visibility = Lockpick::getConstantVisibility(Stronghold::class, 'PUBLIC_CONSTANT');
+        Assert::assertEquals(Visibility::PUBLIC, $visibility);
+    }
+
+    public function testProtectedConstantVisibility(): void
+    {
+        $visibility = Lockpick::getConstantVisibility(Stronghold::class, 'PROTECTED_CONSTANT');
+        Assert::assertEquals(Visibility::PROTECTED, $visibility);
+    }
+
+    public function testPrivateConstantVisibility(): void
+    {
+        $visibility = Lockpick::getConstantVisibility(Stronghold::class, 'PRIVATE_CONSTANT');
+        Assert::assertEquals(Visibility::PRIVATE, $visibility);
+    }
+
+
+    /* ****************************************************************************************** */
+
+    // Test for non-existent method, expecting a ReflectionException
+    public function testMethodDoesNotExist(): void
+    {
+        $this->expectException(\ReflectionException::class);
+        Lockpick::getMethodVisibility(Stronghold::class, 'nonExistentMethod');
+    }
+
 }

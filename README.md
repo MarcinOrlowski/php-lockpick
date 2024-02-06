@@ -46,6 +46,6 @@ code class and all methods should be simply available via static reference `Lock
 
 ## License ##
 
-* Written and copyrighted &copy;2014-2023 by Marcin Orlowski
+* Written and copyrighted &copy;2014-2024 by Marcin Orlowski
 * Open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 * ASCII Art created using [https://textkool.com](https://textkool.com)
