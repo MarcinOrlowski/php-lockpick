@@ -58,4 +58,19 @@ class Stronghold
     {
         return 'I am private method';
     }
+
+    /* ****************************************************************************************** */
+
+    /**
+     * Test method that counts number of arguments passed.
+     *
+     * @param mixed $args Any number of arguments
+     *
+     * @return int Returns number of arguments passed
+     */
+    protected function countArgs(mixed ...$args): int
+    {
+        return \count($args);
+    }
+
 }

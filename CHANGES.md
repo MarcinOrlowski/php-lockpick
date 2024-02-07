@@ -12,6 +12,10 @@
 
 # CHANGELOG #
 
+* 1.4.0 (2024-02-07)
+  * The `Lockpick::call()` now allows single arguments to be passed w/o wrapping them into array.
+
+
 * 1.3.0 (2024-02-06)
   * Dropped PHP 8.0 support
   * Added `Lockpick::getMethodVisibility()` method

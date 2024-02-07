@@ -2,7 +2,7 @@
     "name": "marcin-orlowski/lockpick",
     "description": "Helps accessing protected/private members/consts of foreign objects.",
     "homepage": "https://github.com/MarcinOrlowski/php-lockpick",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "keywords": [
         "helper",
         "php8",
@@ -47,6 +47,13 @@
         "phpstan/phpstan": "^1.8"
     },
     "scripts": {
-	"test": "vendor/bin/phpunit -c phpinit.xml -c phpunit.xml.dist"
+	  "test": "vendor/bin/phpunit -c phpinit.xml -c phpunit.xml.dist",
+
+      "lint": [
+        "@composer codelint",
+        "@composer mdlint"
+      ],
+      "codelint": "vendor/bin/phpstan analyse -c phpstan.neon.dist",
+      "mdlint": "markdownlint --config .markdownlint.yaml.dist --ignore vendor **/*.md .github/**/*.md docs README.md"
     }
 }
