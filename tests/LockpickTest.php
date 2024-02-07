@@ -206,7 +206,6 @@ class LockpickTest extends TestCase
         Assert::assertEquals(Visibility::PRIVATE, $visibility);
     }
 
-
     /* ****************************************************************************************** */
 
     // Test for non-existent method, expecting a ReflectionException
@@ -214,6 +213,37 @@ class LockpickTest extends TestCase
     {
         $this->expectException(\ReflectionException::class);
         Lockpick::getMethodVisibility(Stronghold::class, 'nonExistentMethod');
+    }
+
+    /* ****************************************************************************************** */
+
+    public function testCallWithArgsAsArray(): void
+    {
+        $cnt = \mt_rand(1, 100);
+        $args = \range(0, $cnt - 1);
+
+        $retCnt = Lockpick::call(new Stronghold(), 'countArgs', $args);
+        Assert::assertEquals($cnt, $retCnt);
+    }
+
+    public function testCallWithArgsSingle(): void
+    {
+        $val = \mt_rand(1, 100);
+        $retCnt = Lockpick::call(new Stronghold(), 'countArgs', [$val]);
+        Assert::assertEquals(1, $retCnt);
+
+        $retCnt = Lockpick::call(new Stronghold(), 'countArgs', $val);
+        Assert::assertEquals(1, $retCnt);
+    }
+
+    public function testCallWithArgsUnfolded(): void
+    {
+        $arg1 = 1;
+        $arg2 = 2;
+        $arg3 = 3;
+
+        $retCnt = Lockpick::call(new Stronghold(), 'countArgs', [$arg1, $arg2, $arg3]);
+        Assert::assertEquals(3, $retCnt);
     }
 
 }

@@ -23,14 +23,14 @@ class Lockpick
      *
      * @param object|string $clsOrObj   Object to call $methodName on or name of the class.
      * @param string        $methodName Name of method to call.
-     * @param array         $args       Optional array of arguments (empty array for no args).
+     * @param mixed         $args       Optional single argument or array of arguments.
      *
      * @throws \ReflectionException If method does not exist
      * @throws \RuntimeException   If method is not accessible
      */
     public static function call(string|object $clsOrObj,
                                 string        $methodName,
-                                array         $args = []): mixed
+                                mixed         $args = []): mixed
     {
         Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT]);
 
@@ -42,6 +42,10 @@ class Lockpick
         $reflection = new \ReflectionClass($clsOrObj);
         $method = $reflection->getMethod($methodName);
         $method->setAccessible(true);
+
+        if (!\is_array($args)) {
+            $args = [$args];
+        }
 
         return $method->invokeArgs(\is_object($clsOrObj) ? $clsOrObj : null, $args);
     }
