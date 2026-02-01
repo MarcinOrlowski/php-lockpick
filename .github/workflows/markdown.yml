@@ -4,7 +4,7 @@
 # Helps accessing protected/private members/consts of foreign objects
 #
 # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
-# @copyright 2022-2024 Marcin Orlowski
+# @copyright 2022-2026 Marcin Orlowski
 # @license   http://www.opensource.org/licenses/mit-license.php MIT
 # @link      https://github.com/MarcinOrlowski/php-lockpick
 #
@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: "Checkout repository..."
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # https://github.com/marketplace/actions/my-markdown-linter
       - name: "Running markdown linter..."
@@ -33,4 +33,4 @@ jobs:
           exclude: |
              vendor
              LICENSE.md
-          config_file: .markdownlint.yaml.dist
+          config_file: .markdownlint.yaml

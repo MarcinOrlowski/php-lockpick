@@ -4,7 +4,7 @@
 # Helps accessing protected/private members/consts of foreign objects
 #
 # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
-# @copyright 2022-2024 Marcin Orlowski
+# @copyright 2022-2026 Marcin Orlowski
 # @license   http://www.opensource.org/licenses/mit-license.php MIT
 # @link      https://github.com/MarcinOrlowski/php-lockpick
 #
@@ -28,13 +28,13 @@ jobs:
       fail-fast: false
       matrix:
         # quotes are needed it is treated as a number and zero at decimal part is gone at runtime
-        php: ["8.1", "8.2", "8.3", ]
+        php: ["8.1", "8.2", "8.3", "8.4"]
 
     runs-on: ubuntu-latest
 
     steps:
       - name: "Checkout repository..."
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # https://github.com/marketplace/actions/composer-php-actions
       - name: "Installing dependencies..."
@@ -46,7 +46,7 @@ jobs:
 
       - name: "Running PHPUnit..."
         run: |
-          /usr/bin/env php vendor/bin/phpunit -c phpunit.xml -c phpunit.xml.dist
+          /usr/bin/env php vendor/bin/phpunit -c phpunit.xml
 
 #      # https://github.com/marketplace/actions/phpunit-php-actions
 #      # NOTE: this action uses **OWN** phpunit binary which can be 10, but we got config
