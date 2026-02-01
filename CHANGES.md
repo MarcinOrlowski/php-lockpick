@@ -15,6 +15,8 @@
 * 1.4.1 (TBD)
   * Added project logo
   * Project structure cleanup
+  * Upgraded PHPStan to ^1.12 for PHP 8.4 compatibility
+  * Fixed `setProperty()` to correctly handle class name strings for static properties
 
 
 * 1.4.0 (2024-02-07)

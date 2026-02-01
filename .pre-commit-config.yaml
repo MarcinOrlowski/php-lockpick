@@ -4,32 +4,11 @@
 # Helps accessing protected/private members/consts of foreign objects
 #
 # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
-# @copyright 2014-2024 Marcin Orlowski
+# @copyright 2014-2026 Marcin Orlowski
 # @license   http://www.opensource.org/licenses/mit-license.php MIT
 # @link      https://github.com/MarcinOrlowski/php-lockpick
 #
 ##################################################################################
-#
-# See https://pre-commit.com for more information about pre-commit.
-# See https://pre-commit.com/hooks.html for more available hooks.
-#
-##############################################################################
-#
-# Using pre-commit hooks #
-#
-# To improve quality of your commit, it's recommended to use "pre-commit" (http://pre-commit.com)
-# hooks, that will block  your commits unless all tests pass. This project comes with template
-# configuration file `.pre-commit-config.yaml.dist`.
-#
-# Brief installation instruction:
-#
-# * Ensure you got Python installed
-# * Install pre-commit: `pip install pre-commit`
-# * Go to your Logisim-evolution source code root directory
-# * Copy provided config file template: `cp .pre-commit-config.yaml.dist .pre-commit-config.yaml`
-# * Plug hooks into Git pipeline: `pre-commit install`
-#
-# See `pre-commit` official installation docs too: https://pre-commit.com/#install
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks

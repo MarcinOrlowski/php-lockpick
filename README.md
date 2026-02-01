@@ -1,6 +1,4 @@
-<center>
-<img src="img/logo-matrix-1.webp">
-</center>
+![PHP Lockpick](img/logo-matrix-1.webp)
 
 # Lockpick #
 
@@ -58,6 +56,6 @@ Notes:
 
 ## License ##
 
-* Written and copyrighted &copy;2014-2024 by Marcin Orlowski
+* Written and copyrighted &copy;2014-2026 by Marcin Orlowski
 * Open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 * ASCII Art created using [https://textkool.com](https://textkool.com)

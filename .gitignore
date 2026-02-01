@@ -4,3 +4,12 @@
 /.phpunit.cache
 /.php_cs.cache
 /php-lockpick.iml
+
+CLAUDE.md
+.claude
+
+*~
+*.bak
+*.tmp
+*.swp
+*.lock

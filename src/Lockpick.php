@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Helps accessing protected/private members/consts of foreign objects
  *
  * @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
- * @copyright 2014-2024 Marcin Orlowski
+ * @copyright 2014-2026 Marcin Orlowski
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @link      https://github.com/MarcinOrlowski/php-lockpick
  */
@@ -133,12 +133,6 @@ class Lockpick
     {
         Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT], 'clsOrObj');
 
-        /**
-         * At this point $objectOrClass is either object or string but some static analyzers
-         * got problems figuring that out, so this (partially correct) var declaration is
-         * to make them believe.
-         */
-        /** @var mixed $clsOrObj */
         $reflection = new \ReflectionClass($clsOrObj);
         $property = $reflection->getProperty($name);
         $property->setAccessible(true);
@@ -150,16 +144,9 @@ class Lockpick
     {
         Validator::assertIsType($clsOrObj, [Type::EXISTING_CLASS, Type::OBJECT], 'clsOrObj');
 
-        /**
-         * At this point $objectOrClass is either object or string but some static analyzers
-         * got problems figuring that out, so this (partially correct) var declaration is
-         * to make them believe.
-         */
-        /** @var mixed $clsOrObj */
         $reflection = new \ReflectionClass($clsOrObj);
         $property = $reflection->getProperty($name);
-        /** @var mixed $clsOrObj */
-        $property->setValue($clsOrObj, $value);
+        $property->setValue(\is_object($clsOrObj) ? $clsOrObj : null, $value);
     }
 
     /* ****************************************************************************************** */

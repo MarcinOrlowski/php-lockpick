@@ -44,7 +44,7 @@
     "require-dev": {
         "phpunit/phpunit": "^9.0",
         "phpunit/php-code-coverage": "^9.0",
-        "phpstan/phpstan": "^1.8"
+        "phpstan/phpstan": "^2.0"
     },
     "scripts": {
 	  "test": "vendor/bin/phpunit -c phpinit.xml -c phpunit.xml",
@@ -54,6 +54,6 @@
         "@composer mdlint"
       ],
       "codelint": "vendor/bin/phpstan analyse -c phpstan.neon",
-      "mdlint": "markdownlint --config .markdownlint.yaml --ignore vendor **/*.md .github/**/*.md docs README.md"
+      "mdlint": "markdownlint --config .markdownlint.yaml --ignore vendor --ignore CLAUDE.md ignore .claude/**/*.md **/*.md .github/**/*.md docs README.md"
     }
 }
