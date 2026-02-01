@@ -4,7 +4,7 @@
 # Helps accessing protected/private members/consts of foreign objects
 #
 # @author    Marcin Orlowski <mail (#) marcinOrlowski (.) com>
-# @copyright 2022-2024 Marcin Orlowski
+# @copyright 2022-2026 Marcin Orlowski
 # @license   http://www.opensource.org/licenses/mit-license.php MIT
 # @link      https://github.com/MarcinOrlowski/php-lockpick
 #
@@ -46,7 +46,7 @@ jobs:
 
       - name: "Running PHPUnit with Coverage..."
         run: |
-          /usr/bin/env php vendor/bin/phpunit -c phpunit.xml -c phpunit.xml.dist --coverage-clover coverage.xml
+          /usr/bin/env php vendor/bin/phpunit -c phpunit.xml --coverage-clover coverage.xml
 
 
 #      # https://github.com/marketplace/actions/phpunit-php-actions
@@ -57,7 +57,7 @@ jobs:
 #        uses: php-actions/phpunit@v3
 #        with:
 #          bootstrap: "vendor/autoload.php"
-#          configuration: "phpunit.xml.dist"
+#          configuration: "phpunit.xml"
 #          # we want our PHPUnit version to be used, not one built into the action
 #          vendored_phpunit_path: "vendor/bin/phpunit"
 #          php_extensions: "xdebug"

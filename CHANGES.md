@@ -14,6 +14,7 @@
 
 * 1.4.1 (TBD)
   * Added project logo
+  * Project structure cleanup
 
 
 * 1.4.0 (2024-02-07)

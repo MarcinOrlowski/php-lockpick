@@ -47,13 +47,13 @@
         "phpstan/phpstan": "^1.8"
     },
     "scripts": {
-	  "test": "vendor/bin/phpunit -c phpinit.xml -c phpunit.xml.dist",
+	  "test": "vendor/bin/phpunit -c phpinit.xml -c phpunit.xml",
 
       "lint": [
         "@composer codelint",
         "@composer mdlint"
       ],
-      "codelint": "vendor/bin/phpstan analyse -c phpstan.neon.dist",
-      "mdlint": "markdownlint --config .markdownlint.yaml.dist --ignore vendor **/*.md .github/**/*.md docs README.md"
+      "codelint": "vendor/bin/phpstan analyse -c phpstan.neon",
+      "mdlint": "markdownlint --config .markdownlint.yaml --ignore vendor **/*.md .github/**/*.md docs README.md"
     }
 }

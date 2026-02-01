@@ -4,7 +4,3 @@
 /.phpunit.cache
 /.php_cs.cache
 /php-lockpick.iml
-
-/.pre-commit-config.yaml
-/.markdownlint.yaml
-/phpstan.neon
