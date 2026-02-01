@@ -1,4 +1,4 @@
-![PHP Lockpick](img/logo-matrix-1.webp)
+![PHP Lockpick](img/logo-matrix-2-small.webp)
 
 # Lockpick #
 
